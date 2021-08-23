@@ -1,0 +1,26 @@
+﻿BreedName_ID,First,Last,Middle,Alt First,Alt Last,MaleWtKg,AvgPupPrice,Intelligence,Watchdog,Group1_ID,Group2_ID,Temperament 1_ID,Temperament 2_ID,Temperament 3_ID,Temperament 4_ID,Temperament 5_ID,Temperament 6_ID
+1,American,Eskimo,Dog,,,8,700,0,4,6,7,58,18,24,27,29,39
+2,Basenji,,,,,11,1100,78,5,5,9,56,3,13,18,38,29
+3,Bernese,Mountain,Dog,,,44,900,22,5,13,2,56,21,29,33,0,0
+4,Bolognese,,,,,3,1350,0,2,13,1,60,19,33,41,45,0
+5,Brussels,Griffon,,Brabancon,Griffon,4,900,0,3,12,1,58,11,28,43,44,52
+6,Cavalier,King,Charles Spaniel,,,7,1350,44,2,12,1,56,10,12,25,29,47
+7,Cockapoo,,,,,8,1000,0,3,10,3,56,3,29,33,64,38
+8,Dhole,,,,,18,0,0,0,0,0,66,0,0,0,0,0
+9,English,Setter,,,,30,500,37,3,10,3,65,34,25,18,29,0
+10,Finnish,Spitz,,,,15,600,43,3,6,7,61,27,29,33,38,51
+11,German,Wirehaired,Pointer,,,30,800,44,6,10,3,54,1,24,29,33,53
+12,Havanese,,,,,5,1050,0,3,12,1,56,11,25,29,38,42
+13,Italian,Greyhound,,,,4,900,60,3,12,1,56,2,5,11,29,34
+14,Kishu,,,,,20,400,0,4,10,7,58,15,16,21,36,0
+15,Lowchen,,,,,6,400,0,3,6,1,54,22,24,26,38,0
+16,Neapolitan,Mastiff,,,,60,1750,0,6,13,2,63,17,23,37,49,50
+17,Otterhound,,,,,41,550,46,2,5,8,59,7,20,0,0,0
+18,Pointer,,,,,25,450,43,4,10,3,54,1,4,20,30,33
+19,Puli,,,,,14,1100,27,5,4,4,57,18,21,29,33,37
+20,Sarplaninac,,,,,33,900,0,5,13,2,62,9,14,29,39,40
+21,Sheep,Dog,,,,39,1350,63,4,4,4,55,8,29,32,38,46
+22,South,Russian,Ovtcharka,,,49,900,0,4,4,4,54,6,12,31,35,0
+23,Tibetan,Terrier,,,,10,1600,62,3,6,1,56,4,18,25,41,44
+24,Welsh,Terrier,,,,9,1000,53,3,11,11,58,24,29,48,27,32
+25,Yorkshire,Terrier,Yorkie,Yorkshire,Terrier,3,800,27,3,12,1,58,12,18,27,29,33

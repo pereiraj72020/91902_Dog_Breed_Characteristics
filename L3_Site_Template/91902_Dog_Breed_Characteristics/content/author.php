@@ -1,11 +1,11 @@
 <?php
 
-if(!isset($_REQUEST['authorID']))
+if(!isset($_REQUEST['BreedNameID']))
 {
     header('Location: index.php');
 }
 
-$author_to_find = $_REQUEST['authorID'];
+$author_to_find = $_REQUEST['BreedNameID'];
 
 $find_sql = "SELECT * FROM quotes
 JOIN author ON (`author`.`Author_ID`=`quotes`.`Author_ID`)
