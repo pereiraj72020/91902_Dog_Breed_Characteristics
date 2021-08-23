@@ -3,7 +3,7 @@
         <div class="box banner">
             
     
-            <h1><a class="heading" href="index.php?page=home">Quick Quotes</a>
+            <h1><a class="heading" href="index.php?page=home">Dog Breed Characteristics</a>
             </h1>
         </div>    <!-- / banner -->
 

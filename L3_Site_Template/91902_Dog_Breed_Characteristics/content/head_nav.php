@@ -1,6 +1,6 @@
 <div class="box banner">
             
-    <a class="backhome" href="index.php"><h1>Quick Quotes</h1></a>
+    <a class="backhome" href="index.php"><h1>Dog Breed Characteristics</h1></a>
         </div>    <!-- / banner -->
 
         <!-- Navigation goes here.  Edit BOTH the file name and the link name -->
