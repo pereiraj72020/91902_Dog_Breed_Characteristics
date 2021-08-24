@@ -3,25 +3,25 @@
 $quick_find = mysqli_real_escape_string($dbconnect, $_POST['quick_search']);
 
 // Find subject ID...
-$subject_sql = "SELECT * FROM `subject` WHERE `Subject` LIKE '%$quick_find%'";
-$subject_query = mysqli_query($dbconnect, $subject_sql);
-$subject_rs = mysqli_fetch_assoc($subject_query);
+$temperament_sql = "SELECT * FROM `temperament` WHERE `Temperament` LIKE '%$quick_find%'";
+$temperament_query = mysqli_query($dbconnect, $temperament_sql);
+$temperament_rs = mysqli_fetch_assoc($temperament_query);
 
-$subject_count = mysqli_num_rows($subject_query);
-if ($subject_count > 0) {
-    $subject_ID = $subject_rs['Subject_ID'];
+$temperament_count = mysqli_num_rows($temperament_query);
+if ($temperament_count > 0) {
+    $temperament_ID = $temperament_rs['Temperament_ID'];
 }
 
 else 
 {
     // If this is not set query below breaks!
     // If it is set to zero, any quote which has less than three subjects will be displayed
-    $subject_ID = "-1";
+    $temperament_ID = "-1";
 }
 
 
-$find_sql = "SELECT * FROM quotes
-JOIN author ON (`author`.`Author_ID`=`quotes`.`Author_ID`)
+$find_sql = "SELECT * FROM breedname
+ON (`author`.`Author_ID`)
 WHERE `Last` LIKE '%$quick_find%'
 OR `First` LIKE '%$quick_find%'
 OR `Quote` LIKE '%$quick_find%'
