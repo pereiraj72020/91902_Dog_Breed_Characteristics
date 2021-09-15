@@ -7,14 +7,15 @@ if(!isset($_REQUEST['BreedNameID']))
 
 $author_to_find = $_REQUEST['BreedNameID'];
 
-$find_sql = "SELECT * FROM quotes
-JOIN author ON (`author`.`Author_ID`=`quotes`.`Author_ID`)
-WHERE `quotes`.`Author_ID`= $author_to_find";
+$find_sql = "SELECT * FROM breedname
+ON (`breedname`.`BreedNameID`)
+WHERE `breedname`.`BreedNameID`= $author_to_find";
 
 $find_query = mysqli_query($dbconnect, $find_sql);
 $find_rs = mysqli_fetch_assoc($find_query);
 
-$author_name = $find_rs['First']." ".$find_rs['Middle']." ".$find_rs['Last'];
+$author_name = $find_rs['First']." ".$find_rs['Middle']." ".$find_rs['Last']
+." ".$find_rs['AltFirst']." ".$find_rs['AltLast'];
 
 ?>
 
