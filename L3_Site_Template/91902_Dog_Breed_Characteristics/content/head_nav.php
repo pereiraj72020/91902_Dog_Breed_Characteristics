@@ -10,7 +10,6 @@
                 <div class="commonsearches">
                     
                     <a class="topnav" href="index.php?page=showall">All</a> | 
-                    
                     <a class="topnav" href="index.php?page=recent">Recent</a> | 
                     <a class="topnav" href="index.php?page=random">Random</a> 
                 </div>  <!-- / common searches -->

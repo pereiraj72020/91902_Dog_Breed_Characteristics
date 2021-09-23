@@ -1,0 +1,49 @@
+
+At least <1hr/> a day on Database Assessment | At least <20mins/> a day on Dcat Prep == Friday November 12 
+
+20/09/2021
+
+Database Assessment: ✔
+Dcat Prep: 
+									👀 means haven't changed anything yet.
+Dog Breed Characteristics Database: Checklist --> ✔ means changed for dog_breed_characteristics --> 🤔 means need to change title of component for dog_breed_characteristics
+
+Admin: Total Checked, 0/16
+
+00_admin_time.php - 👀
+01_admin_template.php - 👀
+add_entry.php - 👀
+adminlogin.php - 👀
+autocomplete.php - 👀
+deleteauthor_confirm.php - 🤔
+deleteauthor.php - 🤔
+deletequote_confirm.php - 🤔
+deletequote.php - 🤔
+editauthor.php - 🤔
+editquote.php - 🤔
+login.php - 👀
+logout.php - 👀
+new_quote.php - 🤔
+sandpit.php - 👀
+success.php - 👀
+
+Content: Total Checked, 4/18
+
+breedname.php - ✔ 
+footer.php - ✔
+get_breedname.php - ✔
+get_group.php - 🤔
+head_nav.php - 👀
+head.php - 👀
+heading_navigation.php - 👀
+home.php - 👀
+quick_search.php - 👀
+quote_success.php - 🤔
+random.php - 👀
+recent.php - 👀
+show_career.php - 🤔
+show_country.php - 🤔
+show_results.php - 👀
+show_subjects.php - 🤔
+showall.php - 👀
+temperament.php - ✔
