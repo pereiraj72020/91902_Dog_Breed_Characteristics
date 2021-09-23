@@ -1,9 +1,29 @@
 
-At least <1hr/> a day on Database Assessment | At least <20mins/> a day on Dcat Prep == Friday November 12 
+At least <1hr/> a day on Database Assessment | At least <10mins/> a day on Dcat Prep == Friday November 12 
 
 20/09/2021
 
 Database Assessment: ✔
+Dcat Prep: 
+
+21/09/2021
+
+Database Assessment: 
+Dcat Prep: 
+
+22/09/2021
+
+Database Assessment: 
+Dcat Prep: 
+
+23/09/2021
+
+Database Assessment: 
+Dcat Prep: 
+
+24/09/2021
+
+Database Assessment: 
 Dcat Prep: 
 									👀 means haven't changed anything yet.
 Dog Breed Characteristics Database: Checklist --> ✔ means changed for dog_breed_characteristics --> 🤔 means need to change title of component for dog_breed_characteristics
@@ -27,12 +47,12 @@ new_quote.php - 🤔
 sandpit.php - 👀
 success.php - 👀
 
-Content: Total Checked, 4/18
+Content: Total Checked, 5/18
 
 breedname.php - ✔ 
 footer.php - ✔
 get_breedname.php - ✔
-get_group.php - 🤔
+get_group.php - ✔
 head_nav.php - 👀
 head.php - 👀
 heading_navigation.php - 👀
@@ -47,3 +67,32 @@ show_results.php - 👀
 show_subjects.php - 🤔
 showall.php - 👀
 temperament.php - ✔
+
+Checklist for tables sussed out: INFO below shows how it's sussed...
+
+CONTENT:
+breedname - ✔
+in add_entry... yob is the same for (list shows below)
+- MaleWtKg (weight in kg)
+- AvgPupPrice (price in $)
+- Intelligence (IQ)
+- Watchdog (out of 10)
+breedname REPLACES author
+-------------------------------------------------------------------------
+group -
+
+--------------------------------------------------------------------------
+temperament -
+temperament REPLACES occupation
+---------------------------------------------------------------------------
+users - ✔
+username and password sussed out
+Website: username = admin , , password = admin
+Database: username = admin , , password = $2y$09$pplWF6EyAjiap7oJu0U73e4h8.6N7cFP9ulNb3g6tUCBE5/7QlmV6
+
+ADMIN:
+Name of title when editing - ✔
+edit_dog_breed REPLACES edit_quote
+
+
+
