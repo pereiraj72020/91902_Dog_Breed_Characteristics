@@ -2,17 +2,13 @@
 
 $author_ID = $_SESSION['Add_Quote'];
 
-// Get subject / topic list from database
-$all_tags_sql = "SELECT * FROM `subject` ORDER BY `Subject` ASC ";
-$all_subjects = autocomplete_list($dbconnect, $all_tags_sql, 'Subject');
-
-
 // get country list from database
-$all_countries_sql="SELECT * FROM `country` ORDER BY `Country` ASC ";
-$all_countries = autocomplete_list($dbconnect, $all_countries_sql, 'Country');
+$all_countries_sql="SELECT * FROM `group` ORDER BY `group`.`Group` ASC ";
+$all_countries = autocomplete_list($dbconnect, $all_countries_sql, 'Group');
 
-$all_occupations_sql = "SELECT * FROM `career` ORDER BY `Career` ASC ";
-$all_occupations = autocomplete_list($dbconnect, $all_occupations_sql, 'Career');
+// Get subject / topic list from database
+$all_temperaments_sql = "SELECT * FROM `temperament` ORDER BY `temperament`.`Temperament` ASC ";
+$all_temperaments = autocomplete_list($dbconnect, $all_temperaments_sql, 'Temperament');
 
 // if author not known, initialise variables and set up error messages
 
@@ -21,21 +17,25 @@ if($author_ID=="unknown")
     $first = "";
     $middle = "";
     $last = "";
-    $yob = "";
-    $gender_code = "";
-    $country_1 = "";
-    $country_2 = "";
-    $occupation_1 = "";
-    $occupation_2 = "";
+    $Altfirst = "";
+    $Altlast = "";
+    $group_1 = "";
+    $group_2 = "";
+    $temperament_1 = "";
+    $temperament_2 = "";
+    $temperament_3 = "";
+    $temperament_4 = "";
+    $temperament_5 = "";
+    $temperament_6 = "";
     
     // Initialise country and occupation ID's
-    $country_1_ID = $country_2_ID = $occupation_1_ID = $occupation_2_ID = 0;
+    $group_1_ID = $group_1_ID = $temperament_1_ID = $temperament_2_ID = $temperament_3_ID = $temperament_4_ID = $temperament_5_ID = $temperament_6_ID = 0;
         
     // set up error fields / visibility
-    $first_error = $last_error = $yob_error = $gender_error = $country_1_error = $occupation_1_error = "no-error";
+    $first_error = $last_error = $Altfirst_error = $Altlast_error = $gender_error = $group_1_error = $temperament_1_error = "no-error";
     
-    $first_field = $last_field = $yob_field = $gender_field = "form-ok";
-    $country_1_field = $occupation_1_field = "tag-ok";
+    $first_field = $last_field = Altfirst_field = Altlast_field = "form-ok";
+    $group_1_field = $temperament_1_field = "tag-ok";
         
 }
 
@@ -66,37 +66,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first = mysqli_real_escape_string($dbconnect, $_POST['first']); 
     $middle = mysqli_real_escape_string($dbconnect, $_POST['middle']); 
     $last = mysqli_real_escape_string($dbconnect, $_POST['last']); 
-    $yob = mysqli_real_escape_string($dbconnect, $_POST['yob']); 
+    $Altfirst = mysqli_real_escape_string($dbconnect, $_POST['Altfirst']); 
+    $Altlast = mysqli_real_escape_string($dbconnect, $_POST['Altlast']); 
         
-    $gender_code = mysqli_real_escape_string($dbconnect, $_POST['gender']); 
-    if ($gender_code=="F") {
-        $gender = "Female";
-    }
-    else if ($gender_code=="M") {
-            $gender = "Male";
-        }
-        
-    else {
-        $gender = "";
     }
         
-    $country_1 = mysqli_real_escape_string($dbconnect, $_POST['country1']);
-    $country_2 = mysqli_real_escape_string($dbconnect, $_POST['country2']);
-    $occupation_1 = mysqli_real_escape_string($dbconnect, $_POST['occupation1']);
-    $occupation_2 = mysqli_real_escape_string($dbconnect, $_POST['occupation2']);
+    $group_1 = mysqli_real_escape_string($dbconnect, $_POST['country1']);
+    $group_2 = mysqli_real_escape_string($dbconnect, $_POST['country2']);
+    $temperament_1 = mysqli_real_escape_string($dbconnect, $_POST['temperament1']);
+    $temperament_2 = mysqli_real_escape_string($dbconnect, $_POST['temperament2']);
+    $temperament_3 = mysqli_real_escape_string($dbconnect, $_POST['temperament3']);
+    $temperament_4 = mysqli_real_escape_string($dbconnect, $_POST['temperament4']);
+    $temperament_5 = mysqli_real_escape_string($dbconnect, $_POST['temperament5']);
+    $temperament_6 = mysqli_real_escape_string($dbconnect, $_POST['temperament6']);
         
     }   // end of getting new author values
     
     // get values from quote secion of form
-    $quote = mysqli_real_escape_string($dbconnect, $_POST['quote']);
-    $notes = mysqli_real_escape_string($dbconnect, $_POST['notes']);
-    $tag_1 = mysqli_real_escape_string($dbconnect, $_POST['Subject_1']);
-    $tag_2 = mysqli_real_escape_string($dbconnect, $_POST['Subject_2']);
-    $tag_3 = mysqli_real_escape_string($dbconnect, $_POST['Subject_3']);
+   
+    $tag_1 = mysqli_real_escape_string($dbconnect, $_POST['temperament_1']);
+    $tag_2 = mysqli_real_escape_string($dbconnect, $_POST['temperament_2']);
+    $tag_3 = mysqli_real_escape_string($dbconnect, $_POST['temperament_3']);
+    $tag_4 = mysqli_real_escape_string($dbconnect, $_POST['temperament_4']);
+    $tag_5 = mysqli_real_escape_string($dbconnect, $_POST['temperament_5']);
+    $tag_6 = mysqli_real_escape_string($dbconnect, $_POST['temperament_6']);
+    
     
     // put checking code here in due course...
     
-    if ($author_ID=="unknown")
+    if ($breedname_ID=="unknown")
     {
         if ($first == "") {
         $has_errors = "yes";
@@ -110,34 +108,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $last_field = "form-error";
         }
         
-        if ($gender == "") {
+        if ($Altfirst == "") {
         $has_errors = "yes";
-        $gender_error = "error-text";
-        $gender_field = "form-error";
+        $Altfirst_error = "error-text";
+        $Altfirst_field = "form-error";
         }
         
-        if ($country_1 == "") {
+        if ($Altlast == "") {
         $has_errors = "yes";
-        $country_1_error = "error-text";
-        $country_1_field = "tag-error";
+        $Altlast_error = "error-text";
+        $Altlast_field = "form-error";
         }
         
-        if ($occupation_1 == "") {
+        if ($group_1 == "") {
         $has_errors = "yes";
-        $occupation_1_error = "error-text";
-        $occupation_1_field = "tag-error";
+        $group_1_error = "error-text";
+        $group_1_field = "tag-error";
+        }
+        
+        if ($temperament_1 == "") {
+        $has_errors = "yes";
+        $temperament_1_error = "error-text";
+        $temperament_1_field = "tag-error";
         }
         
         // get country and occupation IDs
-        $countryID_1 = get_ID($dbconnect, 'country', 'Country_ID', 'Country', $country_1);
-        $countryID_2 = get_ID($dbconnect, 'country', 'Country_ID', 'Country', $country_2);
+        $groupID_1 = get_ID($dbconnect, 'group', 'Group_ID', 'Group', $group_1);
+        $groupID_2 = get_ID($dbconnect, 'group', 'Group_ID', 'Group', $group_2);
         
-        $occupationID_1 = get_ID($dbconnect, 'career', 'Career_ID', 'Career', $occupation_1);
-        $occupationID_2 = get_ID($dbconnect, 'career', 'Career_ID', 'Career', $occupation_2);
+        $temperamentID_1 = get_ID($dbconnect, 'temperament', 'Temperament_ID', 'Temperament', $temperament_1);
+        $temperamentID_2 = get_ID($dbconnect, 'temperament', 'Temperament_ID', 'Temperament', $temperament_2);
+        $temperamentID_3 = get_ID($dbconnect, 'temperament', 'Temperament_ID', 'Temperament', $temperament_3);
+        $temperamentID_4= get_ID($dbconnect, 'temperament', 'Temperament_ID', 'Temperament', $temperament_4);
+        $temperamentID_5 = get_ID($dbconnect, 'temperament', 'Temperament_ID', 'Temperament', $temperament_5);
+        $temperamentID_6 = get_ID($dbconnect, 'temperament', 'Temperament_ID', 'Temperament', $temperament_6);
             
         // add author to database
-        $add_author_sql = "INSERT INTO `author` (`Author_ID`, `First`, `Middle`, `Last`, `Gender`, `Born`, `Country1_ID`, `Country2_ID`, `Job1_ID`, `Job2_ID`) VALUES (NULL, '$first', '$middle', '$last', '$gender_code', '$yob', '$countryID_1', '$countryID_2', '$occupationID_1', '$occupationID_2');";
-        $add_author_query = mysqli_query($dbconnect, $add_author_sql);
+        $add_author_sql = "INSERT INTO `breedname` (`BreedNameID`, `First`, `Middle`, `Last`, `Alt First`, `Alt Last`, `Group1_ID`, `Group2_ID`, `Temperament 1_ID`, `Temperament 2_ID`, `Temperament 3_ID`, `Temperament 4_ID`, `Temperament 5_ID`, `Temperament 6_ID`) VALUES (NULL, '$first', '$middle', '$last', '$Altfirst', '$Altlast', '$groupID_1', '$groupID_2', '$temperamentID_1',
+        '$temperamentID_2',
+        '$temperamentID_3',
+        '$temperamentID_4',
+        '$temperamentID_5',
+        '$temperamentID_6');";
+        $add_breedname_query = mysqli_query($dbconnect, $add_breedname_sql);
         
         // Get Author ID
         $find_author_sql = "SELECT * FROM `author` WHERE `Last` = '$last'";
