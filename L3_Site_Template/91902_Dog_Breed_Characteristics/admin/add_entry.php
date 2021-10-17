@@ -82,18 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }   // end of getting new author values
     
-    // get values from quote secion of form
-   
-    $tag_1 = mysqli_real_escape_string($dbconnect, $_POST['temperament_1']);
-    $tag_2 = mysqli_real_escape_string($dbconnect, $_POST['temperament_2']);
-    $tag_3 = mysqli_real_escape_string($dbconnect, $_POST['temperament_3']);
-    $tag_4 = mysqli_real_escape_string($dbconnect, $_POST['temperament_4']);
-    $tag_5 = mysqli_real_escape_string($dbconnect, $_POST['temperament_5']);
-    $tag_6 = mysqli_real_escape_string($dbconnect, $_POST['temperament_6']);
-    
-    
-    // put checking code here in due course...
-    
     if ($breedname_ID=="unknown")
     {
         if ($first == "") {
@@ -152,18 +140,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         '$temperamentID_6');";
         $add_breedname_query = mysqli_query($dbconnect, $add_breedname_sql);
         
-        // Get Author ID
-        $find_author_sql = "SELECT * FROM `author` WHERE `Last` = '$last'";
-        $find_author_query = mysqli_query($dbconnect, $find_author_sql);
-        $find_author_rs = mysqli_fetch_assoc($find_author_query);
+        // Get breedname ID
+        $find_breedname_sql = "SELECT * FROM `breedname` WHERE `Last` = '$last'";
+        $find_breedname_query = mysqli_query($dbconnect, $find_breedname_sql);
+        $find_breedname_rs = mysqli_fetch_assoc($find_breedname_query);
         
-        $new_authorID = $find_author_rs['Author_ID'];
-        echo "New Author ID:".$new_authorID;
+        $new_breednameID = $find_breedname_rs['Breedname_ID'];
+        echo "New Breedname ID:".$new_breednameID;
         
         $author_ID = $new_authorID;
         
         
-    }   // end unknown author if
+    }   // end unknown breedname if
     
     // check quote name is not blank
     if ($quote == "Please type your quote here") {
