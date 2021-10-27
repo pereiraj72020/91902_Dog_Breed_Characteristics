@@ -21,13 +21,17 @@ else
 
 
 $find_sql = "SELECT * FROM breedname
-ON (`author`.`Author_ID`)
+ON (`breedname`.`BreedNameID`)
 WHERE `Last` LIKE '%$quick_find%'
+OR `Alt Last` LIKE '%$quick_find%'
 OR `First` LIKE '%$quick_find%'
-OR `Quote` LIKE '%$quick_find%'
-OR `Subject1_ID` = $subject_ID
-OR `Subject2_ID` = $subject_ID
-OR `Subject3_ID` = $subject_ID
+OR `Alt First` LIKE '%$quick_find%'
+OR `Temperament 1_ID` = $temperament_ID
+OR `Temperament 2_ID` = $temperament_ID
+OR `Temperament 3_ID` = $temperament_ID
+OR `Temperament 4_ID` = $temperament_ID
+OR `Temperament 5_ID` = $temperament_ID
+OR `Temperament 6_ID` = $temperament_ID
 
 ";
 $find_query = mysqli_query($dbconnect, $find_sql);
