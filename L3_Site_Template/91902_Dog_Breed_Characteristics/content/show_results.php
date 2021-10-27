@@ -17,6 +17,8 @@
         <?php echo $find_rs['First']; ?> 
          <?php echo $find_rs['Middle']; ?> 
         <?php echo $find_rs['Last']; ?>
+        <?php echo $find_rs['AltFirst']; ?>
+        <?php echo $find_rs['AltLast']; ?>
         </a>
     </i>
     </span>

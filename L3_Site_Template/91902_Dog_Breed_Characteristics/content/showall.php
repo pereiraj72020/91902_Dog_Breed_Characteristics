@@ -2,8 +2,8 @@
 
 <?php
 
-$find_sql = "SELECT * FROM `quotes`
-JOIN author ON (`author`.`Author_ID`=`quotes`.`Author_ID`)
+$find_sql = "SELECT * FROM `breedname`
+JOIN author ON (`breedname`.`BreedNameID`)
 ";
 
 $find_query = mysqli_query($dbconnect, $find_sql);

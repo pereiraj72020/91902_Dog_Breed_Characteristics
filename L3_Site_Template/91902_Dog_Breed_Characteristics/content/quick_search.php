@@ -23,9 +23,9 @@ else
 $find_sql = "SELECT * FROM breedname
 ON (`breedname`.`BreedNameID`)
 WHERE `Last` LIKE '%$quick_find%'
-OR `Alt Last` LIKE '%$quick_find%'
 OR `First` LIKE '%$quick_find%'
 OR `Alt First` LIKE '%$quick_find%'
+OR `Alt Last` LIKE '%$quick_find%'
 OR `Temperament 1_ID` = $temperament_ID
 OR `Temperament 2_ID` = $temperament_ID
 OR `Temperament 3_ID` = $temperament_ID
@@ -74,7 +74,7 @@ else {
 <h2>Oops!</h2>
 
     <div class="error">
-        Sorry - there are no quotes that match the search term <i><b><?php echo $quick_find ?></b></i>.  Please try again.    
+        Sorry - there are no breednames that match the search term <i><b><?php echo $quick_find ?></b></i>.  Please try again.    
     </div>
 
 <p>&nbsp;</p>
