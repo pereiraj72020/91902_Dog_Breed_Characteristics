@@ -4,7 +4,7 @@
 
 $find_sql = "SELECT * FROM breedname
 ON (`breedname`.`BreedNameID`)ORDER BY 
-`quotes`.`ID` DESC LIMIT 10
+`breedname`.`BreedNameID` DESC LIMIT 10
 ";
 $find_query = mysqli_query($dbconnect, $find_sql);
 $find_rs = mysqli_fetch_assoc($find_query);
