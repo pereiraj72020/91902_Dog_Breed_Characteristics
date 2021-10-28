@@ -2,8 +2,8 @@
 
 <?php
 
-$find_sql = "SELECT * FROM quotes
-JOIN author ON (`author`.`Author_ID`=`quotes`.`Author_ID`)ORDER BY 
+$find_sql = "SELECT * FROM breedname
+ON (`breedname`.`BreedNameID`)ORDER BY 
 `quotes`.`ID` DESC LIMIT 10
 ";
 $find_query = mysqli_query($dbconnect, $find_sql);
