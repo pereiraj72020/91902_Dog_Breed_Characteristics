@@ -1,9 +1,8 @@
-<h2>Random Quotes</h2>
+<h2>Random Breednnames</h2>
 
 <?php
 
-$find_sql = "SELECT * FROM quotes
-JOIN author ON (`author`.`Author_ID`=`quotes`.`Author_ID`)
+$find_sql = "SELECT * FROM breedname ON (`breedname`.`BreedNameID`)
  ORDER BY RAND() LIMIT 10
 ";
 
