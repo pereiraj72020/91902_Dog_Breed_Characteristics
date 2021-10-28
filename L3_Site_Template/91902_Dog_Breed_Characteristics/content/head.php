@@ -11,7 +11,7 @@
     
 
     
-    <title>Quick Quotes</title>
+    <title>Dog Breed Characteristics</title>
     
     <!-- Edit the link below / replace with your chosen google font -->
     <link href="https://fonts.googleapis.com/css?family=Lato%7cUbuntu" rel="stylesheet"> 
